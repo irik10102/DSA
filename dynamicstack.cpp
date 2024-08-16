@@ -70,15 +70,27 @@ class dynamic_stack
 		void display()
 		{
 			node* temp = top;
-			
-			while(temp != NULL)
+			try
 			{
-				cout<<temp->data<<"   ";
-				temp=temp->next;
+				if(top == NULL)
+					throw -1;
+				else
+				{
+			
+					while(temp != NULL)
+					{
+						cout<<temp->data<<"   ";
+						temp=temp->next;
+					}
+					cout<<endl;
+				}
 			}
-			cout<<endl;
+			catch(int)
+			{
+				cout<<"Stack Empty"<<endl;
+				return;
+			}
 		}
-		
 
 };
 
