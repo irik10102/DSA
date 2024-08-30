@@ -1,0 +1,42 @@
+int strStr(string haystack, string needle)
+{
+  int hLen=haystack.size();
+	int nLen=needle.size();
+	int n=hLen-nLen;
+	
+	if(n<0)      		//haystack is smaller than needle
+		return -1;
+		
+	else if(n == 0)   //haystack and needle are of equal length
+		if(haystack == needle)
+			return 0;
+	else
+  {
+		int n1,flag=0,c=1; //c is the index of needle
+		
+		for(int i=0;i<=n;i++)
+		{
+			if(haystack[i] == needle[0])
+			{
+                if(n2==1)
+                    return i;
+				n1 = i+nLen;//exclusive range of inner loop, to check if needle string exist in haystack within given range
+				for(int j=i+1;j<n3;j++)
+				{
+					if(haystack[j] == needle[c])
+						flag=1;
+					else
+					{
+						flag=0;
+						break;
+					}
+					c++;
+				}
+				if(flag == 1)
+					return i;
+			}
+			c=1;
+		}
+	}
+	return -1;
+ }
